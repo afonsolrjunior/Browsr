@@ -8,10 +8,19 @@
 import Foundation
 import Combine
 
-protocol FavoritesRepository {
+protocol AddFavoriteService {
     func addFavorite(_ organizationViewModel: OrganizationViewModel)
+}
+
+protocol GetFavoritesService {
     func getFavorites() -> AnyPublisher<[OrganizationViewModel], Never>
 }
+
+protocol RemoveFavoriteService {
+    func removeFavorite(_ organizationViewModel: OrganizationViewModel)
+}
+
+protocol FavoritesRepository: AddFavoriteService & GetFavoritesService & RemoveFavoriteService {}
 
 final class CoreDataFavoritesService: FavoritesRepository {
     
@@ -23,6 +32,10 @@ final class CoreDataFavoritesService: FavoritesRepository {
     
     func addFavorite(_ organizationViewModel: OrganizationViewModel) {
         self.coreDataService.addFavorite(organization: organizationViewModel)
+    }
+    
+    func removeFavorite(_ organizationViewModel: OrganizationViewModel) {
+        self.coreDataService.removeFavorite(organization: organizationViewModel)
     }
     
     func getFavorites() -> AnyPublisher<[OrganizationViewModel], Never> {

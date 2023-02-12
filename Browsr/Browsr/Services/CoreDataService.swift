@@ -89,4 +89,24 @@ final class CoreDataService {
         
     }
     
+    func removeFavorite(organization: OrganizationViewModel) {
+        let context = persistentContainer.viewContext
+        let fetchRequest = OrganizationDTO.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "name == %@", organization.name)
+        
+        return context.performAndWait {
+            do {
+                let objects = try context.fetch(fetchRequest)
+                for object in objects {
+                    context.delete(object)
+                }
+                try context.save()
+            } catch {
+                
+            }
+            
+        }
+        
+    }
+    
 }

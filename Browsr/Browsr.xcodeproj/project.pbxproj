@@ -29,6 +29,10 @@
 		9BFE9E31299992D600535717 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE9E30299992D600535717 /* CoreDataService.swift */; };
 		9BFE9E342999980D00535717 /* OrganizationsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE9E332999980D00535717 /* OrganizationsUseCase.swift */; };
 		9BFE9E3629999BD900535717 /* FavoritesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE9E3529999BD900535717 /* FavoritesUseCase.swift */; };
+		9BFE9E3B29999E0200535717 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE9E3A29999E0200535717 /* MainCoordinator.swift */; };
+		9BFE9E3D2999A0D100535717 /* ListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE9E3C2999A0D100535717 /* ListCoordinator.swift */; };
+		9BFE9E3F2999A17000535717 /* OrganizationsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE9E3E2999A17000535717 /* OrganizationsPresenter.swift */; };
+		9BFE9E412999A2AD00535717 /* FavoritesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE9E402999A2AD00535717 /* FavoritesPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +80,10 @@
 		9BFE9E30299992D600535717 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		9BFE9E332999980D00535717 /* OrganizationsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationsUseCase.swift; sourceTree = "<group>"; };
 		9BFE9E3529999BD900535717 /* FavoritesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesUseCase.swift; sourceTree = "<group>"; };
+		9BFE9E3A29999E0200535717 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		9BFE9E3C2999A0D100535717 /* ListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCoordinator.swift; sourceTree = "<group>"; };
+		9BFE9E3E2999A17000535717 /* OrganizationsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationsPresenter.swift; sourceTree = "<group>"; };
+		9BFE9E402999A2AD00535717 /* FavoritesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +136,7 @@
 		9BFE9DCF299979AB00535717 /* Browsr */ = {
 			isa = PBXGroup;
 			children = (
+				9BFE9E3729999CFE00535717 /* Coordinators */,
 				9BFE9E32299997F900535717 /* Use Cases */,
 				9BFE9E0929997A2D00535717 /* Supporting Files */,
 				9BFE9E0829997A1F00535717 /* Services */,
@@ -160,6 +169,8 @@
 		9BFE9E03299979F400535717 /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
+				9BFE9E3E2999A17000535717 /* OrganizationsPresenter.swift */,
+				9BFE9E402999A2AD00535717 /* FavoritesPresenter.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -239,6 +250,15 @@
 				9BFE9E3529999BD900535717 /* FavoritesUseCase.swift */,
 			);
 			path = "Use Cases";
+			sourceTree = "<group>";
+		};
+		9BFE9E3729999CFE00535717 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				9BFE9E3A29999E0200535717 /* MainCoordinator.swift */,
+				9BFE9E3C2999A0D100535717 /* ListCoordinator.swift */,
+			);
+			path = Coordinators;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -373,11 +393,15 @@
 			files = (
 				9BFE9E31299992D600535717 /* CoreDataService.swift in Sources */,
 				9BFE9DD5299979AC00535717 /* ViewController.swift in Sources */,
+				9BFE9E3D2999A0D100535717 /* ListCoordinator.swift in Sources */,
 				9BFE9E1B2999800700535717 /* OrganizationDTO+CoreDataClass.swift in Sources */,
 				9BFE9E222999820100535717 /* ImageService.swift in Sources */,
 				9BFE9E1C2999800700535717 /* OrganizationDTO+CoreDataProperties.swift in Sources */,
 				9BFE9DD1299979AC00535717 /* AppDelegate.swift in Sources */,
+				9BFE9E3B29999E0200535717 /* MainCoordinator.swift in Sources */,
+				9BFE9E3F2999A17000535717 /* OrganizationsPresenter.swift in Sources */,
 				9BFE9E262999882E00535717 /* OrganizationsRepository.swift in Sources */,
+				9BFE9E412999A2AD00535717 /* FavoritesPresenter.swift in Sources */,
 				9BFE9DDB299979AC00535717 /* Browsr.xcdatamodeld in Sources */,
 				9BFE9E282999888000535717 /* OrganizationViewModel.swift in Sources */,
 				9BFE9E2F2999920900535717 /* FavoritesRepository.swift in Sources */,
