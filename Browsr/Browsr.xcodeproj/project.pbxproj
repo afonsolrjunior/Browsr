@@ -27,6 +27,7 @@
 		9BFE9E2D299989A700535717 /* libBrowsr-Lib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BFE9E2C299989A700535717 /* libBrowsr-Lib.a */; };
 		9BFE9E2F2999920900535717 /* FavoritesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE9E2E2999920900535717 /* FavoritesRepository.swift */; };
 		9BFE9E31299992D600535717 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE9E30299992D600535717 /* CoreDataService.swift */; };
+		9BFE9E342999980D00535717 /* OrganizationsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE9E332999980D00535717 /* OrganizationsUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		9BFE9E2C299989A700535717 /* libBrowsr-Lib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libBrowsr-Lib.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BFE9E2E2999920900535717 /* FavoritesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesRepository.swift; sourceTree = "<group>"; };
 		9BFE9E30299992D600535717 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
+		9BFE9E332999980D00535717 /* OrganizationsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationsUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 		9BFE9DCF299979AB00535717 /* Browsr */ = {
 			isa = PBXGroup;
 			children = (
+				9BFE9E32299997F900535717 /* Use Cases */,
 				9BFE9E0929997A2D00535717 /* Supporting Files */,
 				9BFE9E0829997A1F00535717 /* Services */,
 				9BFE9E0729997A1700535717 /* Models */,
@@ -225,6 +228,14 @@
 				9BFE9E2A2999892600535717 /* libBrowsr-Lib.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9BFE9E32299997F900535717 /* Use Cases */ = {
+			isa = PBXGroup;
+			children = (
+				9BFE9E332999980D00535717 /* OrganizationsUseCase.swift */,
+			);
+			path = "Use Cases";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -370,6 +381,7 @@
 				9BFE9E1E2999806A00535717 /* CacheService.swift in Sources */,
 				9BFE9DD3299979AC00535717 /* SceneDelegate.swift in Sources */,
 				9BFE9E242999864500535717 /* NetworkStatusService.swift in Sources */,
+				9BFE9E342999980D00535717 /* OrganizationsUseCase.swift in Sources */,
 				9BFE9E20299980B300535717 /* ImageData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

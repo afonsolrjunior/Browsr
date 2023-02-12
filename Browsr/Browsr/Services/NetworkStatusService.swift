@@ -9,28 +9,44 @@ import Foundation
 import Combine
 import Network
 
+enum NetworkError: Error {
+    case disconnected
+}
+
 enum NetworkStatus {
     case connected
     case disconnected
 }
 
 protocol NetworkStatusService {
-    func getStatus() -> AnyPublisher<NetworkStatus, Never>
+    func startMonitoring()
+    func stopMonitoring()
+    func getStatus() -> NetworkStatus
 }
 
 final class NetworkStatusMonitor: NetworkStatusService {
     
     private let monitor = NWPathMonitor()
     private let queue = DispatchQueue(label: "Monitor")
-    private let publisher = PassthroughSubject<NetworkStatus, Never>()
+    private var status: NetworkStatus = .disconnected
     
-    func getStatus() -> AnyPublisher<NetworkStatus, Never> {
+    init() {
         monitor.pathUpdateHandler = {[weak self] path in
             guard let self else { return }
-            self.publisher.send(path.status == .satisfied ? .connected : .disconnected)
+            self.status = path.status == .satisfied ? .connected : .disconnected
         }
+    }
+    
+    func startMonitoring() {
         monitor.start(queue: queue)
-        return publisher.eraseToAnyPublisher()
+    }
+    
+    func getStatus() -> NetworkStatus {
+        return status
+    }
+    
+    func stopMonitoring() {
+        monitor.cancel()
     }
     
 }
