@@ -9,4 +9,9 @@ import Foundation
 
 class ImageData {
     let data: Data
+    
+    init(data: Data) {
+        self.data = data
+    }
+    
 }
