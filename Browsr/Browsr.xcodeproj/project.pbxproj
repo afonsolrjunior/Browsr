@@ -28,6 +28,7 @@
 		9BFE9E2F2999920900535717 /* FavoritesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE9E2E2999920900535717 /* FavoritesRepository.swift */; };
 		9BFE9E31299992D600535717 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE9E30299992D600535717 /* CoreDataService.swift */; };
 		9BFE9E342999980D00535717 /* OrganizationsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE9E332999980D00535717 /* OrganizationsUseCase.swift */; };
+		9BFE9E3629999BD900535717 /* FavoritesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE9E3529999BD900535717 /* FavoritesUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		9BFE9E2E2999920900535717 /* FavoritesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesRepository.swift; sourceTree = "<group>"; };
 		9BFE9E30299992D600535717 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		9BFE9E332999980D00535717 /* OrganizationsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationsUseCase.swift; sourceTree = "<group>"; };
+		9BFE9E3529999BD900535717 /* FavoritesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				9BFE9E332999980D00535717 /* OrganizationsUseCase.swift */,
+				9BFE9E3529999BD900535717 /* FavoritesUseCase.swift */,
 			);
 			path = "Use Cases";
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 				9BFE9E1E2999806A00535717 /* CacheService.swift in Sources */,
 				9BFE9DD3299979AC00535717 /* SceneDelegate.swift in Sources */,
 				9BFE9E242999864500535717 /* NetworkStatusService.swift in Sources */,
+				9BFE9E3629999BD900535717 /* FavoritesUseCase.swift in Sources */,
 				9BFE9E342999980D00535717 /* OrganizationsUseCase.swift in Sources */,
 				9BFE9E20299980B300535717 /* ImageData.swift in Sources */,
 			);
