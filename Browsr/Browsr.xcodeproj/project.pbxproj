@@ -25,6 +25,8 @@
 		9BFE9E262999882E00535717 /* OrganizationsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE9E252999882E00535717 /* OrganizationsRepository.swift */; };
 		9BFE9E282999888000535717 /* OrganizationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE9E272999888000535717 /* OrganizationViewModel.swift */; };
 		9BFE9E2D299989A700535717 /* libBrowsr-Lib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BFE9E2C299989A700535717 /* libBrowsr-Lib.a */; };
+		9BFE9E2F2999920900535717 /* FavoritesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE9E2E2999920900535717 /* FavoritesRepository.swift */; };
+		9BFE9E31299992D600535717 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE9E30299992D600535717 /* CoreDataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +70,8 @@
 		9BFE9E272999888000535717 /* OrganizationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationViewModel.swift; sourceTree = "<group>"; };
 		9BFE9E2A2999892600535717 /* libBrowsr-Lib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libBrowsr-Lib.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BFE9E2C299989A700535717 /* libBrowsr-Lib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libBrowsr-Lib.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BFE9E2E2999920900535717 /* FavoritesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesRepository.swift; sourceTree = "<group>"; };
+		9BFE9E30299992D600535717 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +199,8 @@
 				9BFE9E212999820100535717 /* ImageService.swift */,
 				9BFE9E232999864500535717 /* NetworkStatusService.swift */,
 				9BFE9E252999882E00535717 /* OrganizationsRepository.swift */,
+				9BFE9E2E2999920900535717 /* FavoritesRepository.swift */,
+				9BFE9E30299992D600535717 /* CoreDataService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -351,6 +357,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BFE9E31299992D600535717 /* CoreDataService.swift in Sources */,
 				9BFE9DD5299979AC00535717 /* ViewController.swift in Sources */,
 				9BFE9E1B2999800700535717 /* OrganizationDTO+CoreDataClass.swift in Sources */,
 				9BFE9E222999820100535717 /* ImageService.swift in Sources */,
@@ -359,6 +366,7 @@
 				9BFE9E262999882E00535717 /* OrganizationsRepository.swift in Sources */,
 				9BFE9DDB299979AC00535717 /* Browsr.xcdatamodeld in Sources */,
 				9BFE9E282999888000535717 /* OrganizationViewModel.swift in Sources */,
+				9BFE9E2F2999920900535717 /* FavoritesRepository.swift in Sources */,
 				9BFE9E1E2999806A00535717 /* CacheService.swift in Sources */,
 				9BFE9DD3299979AC00535717 /* SceneDelegate.swift in Sources */,
 				9BFE9E242999864500535717 /* NetworkStatusService.swift in Sources */,

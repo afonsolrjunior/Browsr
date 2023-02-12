@@ -17,12 +17,10 @@ protocol OrganizationsRepository {
 final class OrganizationService: OrganizationsRepository {
     
     private let organizationsService: OrganizationsService
-    private let imageService: ImageService
     private var nextRequestUrl = ""
     
-    init(organizationsService: OrganizationsService, imageService: ImageService) {
+    init(organizationsService: OrganizationsService) {
         self.organizationsService = organizationsService
-        self.imageService = imageService
     }
     
     func getOrganizations() -> AnyPublisher<[OrganizationViewModel], Error> {
@@ -41,17 +39,15 @@ final class OrganizationService: OrganizationsRepository {
             self.nextRequestUrl = pagedResponse.nextPageUrl
             return pagedResponse.results
                 .map({  OrganizationViewModel(name: $0.name,
-                                              avatarImageLoader: self.imageService.getImage(for: $0.avatarUrlString)) })
+                                              avatarUrl: $0.avatarUrlString) })
         }.eraseToAnyPublisher()
     }
     
     func getOrganization(name: String) -> AnyPublisher<OrganizationViewModel, Error> {
-        let request = OrganizationsRequest(endpoint: .search(name: name))
         
-        return organizationsService.getOrganizations(request: request).map {[weak self] organization in
-            guard let self else { return  }
+        return organizationsService.getOrganization(name: name).map { organization in
             return OrganizationViewModel(name: organization.name,
-                                         avatarImageLoader: self.imageService.getImage(for: organization.avatarUrlString))
+                                         avatarUrl: organization.avatarUrlString)
         }.eraseToAnyPublisher()
     }
     

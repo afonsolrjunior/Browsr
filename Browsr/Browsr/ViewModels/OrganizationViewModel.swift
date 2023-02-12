@@ -10,5 +10,5 @@ import Combine
 
 struct OrganizationViewModel {
     let name: String
-    let avatarImageLoader: AnyPublisher<UIImage, Never>
+    let avatarUrl: String
 }
