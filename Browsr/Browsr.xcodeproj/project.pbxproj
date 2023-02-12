@@ -22,6 +22,9 @@
 		9BFE9E20299980B300535717 /* ImageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE9E1F299980B300535717 /* ImageData.swift */; };
 		9BFE9E222999820100535717 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE9E212999820100535717 /* ImageService.swift */; };
 		9BFE9E242999864500535717 /* NetworkStatusService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE9E232999864500535717 /* NetworkStatusService.swift */; };
+		9BFE9E262999882E00535717 /* OrganizationsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE9E252999882E00535717 /* OrganizationsRepository.swift */; };
+		9BFE9E282999888000535717 /* OrganizationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE9E272999888000535717 /* OrganizationViewModel.swift */; };
+		9BFE9E2D299989A700535717 /* libBrowsr-Lib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BFE9E2C299989A700535717 /* libBrowsr-Lib.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +64,10 @@
 		9BFE9E1F299980B300535717 /* ImageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageData.swift; sourceTree = "<group>"; };
 		9BFE9E212999820100535717 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 		9BFE9E232999864500535717 /* NetworkStatusService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkStatusService.swift; sourceTree = "<group>"; };
+		9BFE9E252999882E00535717 /* OrganizationsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationsRepository.swift; sourceTree = "<group>"; };
+		9BFE9E272999888000535717 /* OrganizationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationViewModel.swift; sourceTree = "<group>"; };
+		9BFE9E2A2999892600535717 /* libBrowsr-Lib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libBrowsr-Lib.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BFE9E2C299989A700535717 /* libBrowsr-Lib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libBrowsr-Lib.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BFE9E2D299989A700535717 /* libBrowsr-Lib.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +103,7 @@
 				9BFE9DE9299979AD00535717 /* BrowsrTests */,
 				9BFE9DF3299979AD00535717 /* BrowsrUITests */,
 				9BFE9DCE299979AB00535717 /* Products */,
+				9BFE9E292999892600535717 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -149,6 +158,7 @@
 		9BFE9E04299979FE00535717 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				9BFE9E272999888000535717 /* OrganizationViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -184,6 +194,7 @@
 				9BFE9E1D2999806A00535717 /* CacheService.swift */,
 				9BFE9E212999820100535717 /* ImageService.swift */,
 				9BFE9E232999864500535717 /* NetworkStatusService.swift */,
+				9BFE9E252999882E00535717 /* OrganizationsRepository.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -199,6 +210,15 @@
 				9BFE9DE1299979AD00535717 /* Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9BFE9E292999892600535717 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9BFE9E2C299989A700535717 /* libBrowsr-Lib.a */,
+				9BFE9E2A2999892600535717 /* libBrowsr-Lib.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -336,7 +356,9 @@
 				9BFE9E222999820100535717 /* ImageService.swift in Sources */,
 				9BFE9E1C2999800700535717 /* OrganizationDTO+CoreDataProperties.swift in Sources */,
 				9BFE9DD1299979AC00535717 /* AppDelegate.swift in Sources */,
+				9BFE9E262999882E00535717 /* OrganizationsRepository.swift in Sources */,
 				9BFE9DDB299979AC00535717 /* Browsr.xcdatamodeld in Sources */,
+				9BFE9E282999888000535717 /* OrganizationViewModel.swift in Sources */,
 				9BFE9E1E2999806A00535717 /* CacheService.swift in Sources */,
 				9BFE9DD3299979AC00535717 /* SceneDelegate.swift in Sources */,
 				9BFE9E242999864500535717 /* NetworkStatusService.swift in Sources */,
