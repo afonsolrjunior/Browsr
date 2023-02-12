@@ -14,7 +14,7 @@ protocol CacheService {
 
 final class ImageCacheService: CacheService {
     
-    let cache = NSCache<NSString, ImageData>()
+    private let cache = NSCache<NSString, ImageData>()
     
     func save(imageData: ImageData, key: String) {
         cache.setObject(imageData, forKey: NSString(string: key))

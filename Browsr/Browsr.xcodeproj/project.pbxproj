@@ -21,6 +21,7 @@
 		9BFE9E1E2999806A00535717 /* CacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE9E1D2999806A00535717 /* CacheService.swift */; };
 		9BFE9E20299980B300535717 /* ImageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE9E1F299980B300535717 /* ImageData.swift */; };
 		9BFE9E222999820100535717 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE9E212999820100535717 /* ImageService.swift */; };
+		9BFE9E242999864500535717 /* NetworkStatusService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE9E232999864500535717 /* NetworkStatusService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		9BFE9E1D2999806A00535717 /* CacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheService.swift; sourceTree = "<group>"; };
 		9BFE9E1F299980B300535717 /* ImageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageData.swift; sourceTree = "<group>"; };
 		9BFE9E212999820100535717 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
+		9BFE9E232999864500535717 /* NetworkStatusService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkStatusService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +183,7 @@
 			children = (
 				9BFE9E1D2999806A00535717 /* CacheService.swift */,
 				9BFE9E212999820100535717 /* ImageService.swift */,
+				9BFE9E232999864500535717 /* NetworkStatusService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 				9BFE9DDB299979AC00535717 /* Browsr.xcdatamodeld in Sources */,
 				9BFE9E1E2999806A00535717 /* CacheService.swift in Sources */,
 				9BFE9DD3299979AC00535717 /* SceneDelegate.swift in Sources */,
+				9BFE9E242999864500535717 /* NetworkStatusService.swift in Sources */,
 				9BFE9E20299980B300535717 /* ImageData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

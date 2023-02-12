@@ -14,8 +14,8 @@ protocol ImageService {
 
 final class UIImageService: ImageService {
     
-    let cacheService: CacheService
-    let imageDataRetriever: (String) -> AnyPublisher<Data, Never>
+    private let cacheService: CacheService
+    private let imageDataRetriever: (String) -> AnyPublisher<Data, Never>
     
     init(
         cacheService: CacheService,
