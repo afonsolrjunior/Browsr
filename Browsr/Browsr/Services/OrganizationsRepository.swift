@@ -44,7 +44,6 @@ final class OrganizationService: OrganizationsRepository {
     }
     
     func getOrganization(name: String) -> AnyPublisher<OrganizationViewModel, Error> {
-        
         return organizationsService.getOrganization(name: name).map { organization in
             return OrganizationViewModel(name: organization.name,
                                          avatarUrl: organization.avatarUrlString)

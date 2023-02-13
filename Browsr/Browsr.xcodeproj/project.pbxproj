@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		9BFE9DD1299979AC00535717 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE9DD0299979AC00535717 /* AppDelegate.swift */; };
 		9BFE9DD3299979AC00535717 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE9DD2299979AC00535717 /* SceneDelegate.swift */; };
-		9BFE9DD5299979AC00535717 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE9DD4299979AC00535717 /* ViewController.swift */; };
 		9BFE9DDB299979AC00535717 /* Browsr.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE9DD9299979AC00535717 /* Browsr.xcdatamodeld */; };
 		9BFE9DDD299979AD00535717 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BFE9DDC299979AD00535717 /* Assets.xcassets */; };
 		9BFE9DE0299979AD00535717 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BFE9DDE299979AD00535717 /* LaunchScreen.storyboard */; };
@@ -33,6 +32,11 @@
 		9BFE9E3D2999A0D100535717 /* ListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE9E3C2999A0D100535717 /* ListCoordinator.swift */; };
 		9BFE9E3F2999A17000535717 /* OrganizationsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE9E3E2999A17000535717 /* OrganizationsPresenter.swift */; };
 		9BFE9E412999A2AD00535717 /* FavoritesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE9E402999A2AD00535717 /* FavoritesPresenter.swift */; };
+		9BFE9E432999A50F00535717 /* OrganizationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE9E422999A50F00535717 /* OrganizationsViewController.swift */; };
+		9BFE9E462999A61100535717 /* UITableViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE9E452999A61100535717 /* UITableViewCell+Extensions.swift */; };
+		9BFE9E492999A6CC00535717 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE9E482999A6CC00535717 /* DataProvider.swift */; };
+		9BFE9E4B2999A7A900535717 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE9E4A2999A7A900535717 /* FavoritesViewController.swift */; };
+		9BFE9E4D2999A9FE00535717 /* Assembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE9E4C2999A9FE00535717 /* Assembler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,7 +60,6 @@
 		9BFE9DCD299979AB00535717 /* Browsr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Browsr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BFE9DD0299979AC00535717 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9BFE9DD2299979AC00535717 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9BFE9DD4299979AC00535717 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9BFE9DDA299979AC00535717 /* Browsr.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Browsr.xcdatamodel; sourceTree = "<group>"; };
 		9BFE9DDC299979AD00535717 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9BFE9DDF299979AD00535717 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -84,6 +87,11 @@
 		9BFE9E3C2999A0D100535717 /* ListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCoordinator.swift; sourceTree = "<group>"; };
 		9BFE9E3E2999A17000535717 /* OrganizationsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationsPresenter.swift; sourceTree = "<group>"; };
 		9BFE9E402999A2AD00535717 /* FavoritesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesPresenter.swift; sourceTree = "<group>"; };
+		9BFE9E422999A50F00535717 /* OrganizationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationsViewController.swift; sourceTree = "<group>"; };
+		9BFE9E452999A61100535717 /* UITableViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extensions.swift"; sourceTree = "<group>"; };
+		9BFE9E482999A6CC00535717 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		9BFE9E4A2999A7A900535717 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		9BFE9E4C2999A9FE00535717 /* Assembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +144,8 @@
 		9BFE9DCF299979AB00535717 /* Browsr */ = {
 			isa = PBXGroup;
 			children = (
+				9BFE9E472999A6BC00535717 /* Helpers */,
+				9BFE9E442999A5F800535717 /* Extensions */,
 				9BFE9E3729999CFE00535717 /* Coordinators */,
 				9BFE9E32299997F900535717 /* Use Cases */,
 				9BFE9E0929997A2D00535717 /* Supporting Files */,
@@ -196,6 +206,8 @@
 		9BFE9E0629997A1000535717 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				9BFE9E422999A50F00535717 /* OrganizationsViewController.swift */,
+				9BFE9E4A2999A7A900535717 /* FavoritesViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -226,7 +238,6 @@
 			children = (
 				9BFE9DD0299979AC00535717 /* AppDelegate.swift */,
 				9BFE9DD2299979AC00535717 /* SceneDelegate.swift */,
-				9BFE9DD4299979AC00535717 /* ViewController.swift */,
 				9BFE9DDC299979AD00535717 /* Assets.xcassets */,
 				9BFE9DDE299979AD00535717 /* LaunchScreen.storyboard */,
 				9BFE9DE1299979AD00535717 /* Info.plist */,
@@ -259,6 +270,23 @@
 				9BFE9E3C2999A0D100535717 /* ListCoordinator.swift */,
 			);
 			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		9BFE9E442999A5F800535717 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9BFE9E452999A61100535717 /* UITableViewCell+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9BFE9E472999A6BC00535717 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				9BFE9E482999A6CC00535717 /* DataProvider.swift */,
+				9BFE9E4C2999A9FE00535717 /* Assembler.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -392,7 +420,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BFE9E31299992D600535717 /* CoreDataService.swift in Sources */,
-				9BFE9DD5299979AC00535717 /* ViewController.swift in Sources */,
 				9BFE9E3D2999A0D100535717 /* ListCoordinator.swift in Sources */,
 				9BFE9E1B2999800700535717 /* OrganizationDTO+CoreDataClass.swift in Sources */,
 				9BFE9E222999820100535717 /* ImageService.swift in Sources */,
@@ -400,14 +427,19 @@
 				9BFE9DD1299979AC00535717 /* AppDelegate.swift in Sources */,
 				9BFE9E3B29999E0200535717 /* MainCoordinator.swift in Sources */,
 				9BFE9E3F2999A17000535717 /* OrganizationsPresenter.swift in Sources */,
+				9BFE9E492999A6CC00535717 /* DataProvider.swift in Sources */,
+				9BFE9E4B2999A7A900535717 /* FavoritesViewController.swift in Sources */,
 				9BFE9E262999882E00535717 /* OrganizationsRepository.swift in Sources */,
 				9BFE9E412999A2AD00535717 /* FavoritesPresenter.swift in Sources */,
 				9BFE9DDB299979AC00535717 /* Browsr.xcdatamodeld in Sources */,
 				9BFE9E282999888000535717 /* OrganizationViewModel.swift in Sources */,
 				9BFE9E2F2999920900535717 /* FavoritesRepository.swift in Sources */,
+				9BFE9E432999A50F00535717 /* OrganizationsViewController.swift in Sources */,
+				9BFE9E4D2999A9FE00535717 /* Assembler.swift in Sources */,
 				9BFE9E1E2999806A00535717 /* CacheService.swift in Sources */,
 				9BFE9DD3299979AC00535717 /* SceneDelegate.swift in Sources */,
 				9BFE9E242999864500535717 /* NetworkStatusService.swift in Sources */,
+				9BFE9E462999A61100535717 /* UITableViewCell+Extensions.swift in Sources */,
 				9BFE9E3629999BD900535717 /* FavoritesUseCase.swift in Sources */,
 				9BFE9E342999980D00535717 /* OrganizationsUseCase.swift in Sources */,
 				9BFE9E20299980B300535717 /* ImageData.swift in Sources */,

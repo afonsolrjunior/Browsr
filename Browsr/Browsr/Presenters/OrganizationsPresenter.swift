@@ -7,12 +7,15 @@
 
 import UIKit
 import Combine
+import Browsr_Lib
 
 final class OrganizationsPresenter {
     
     private let organizationsUseCase: OrganizationsUseCase
     private let addFavoriteService: AddFavoriteService
     private let imageService: ImageService
+    
+    public let searchTextSubject = PassthroughSubject<String, Never>()
     
     init(
         organizationsUseCase: OrganizationsUseCase,
@@ -28,8 +31,15 @@ final class OrganizationsPresenter {
         return organizationsUseCase.getOrganizations()
     }
     
-    func getOrganization(name: String) -> AnyPublisher<OrganizationViewModel, Error> {
-        return organizationsUseCase.getOrganization(name: name)
+    func getSearchedOrganization() -> AnyPublisher<OrganizationViewModel, Error> {
+        return searchTextSubject.flatMap {[weak self] name -> AnyPublisher<OrganizationViewModel, Error> in
+            guard let self else {
+                return Fail(outputType: OrganizationViewModel.self,
+                            failure: BrowsrLibError.organizationNotFound)
+                .eraseToAnyPublisher()
+            }
+            return self.organizationsUseCase.getOrganization(name: name.lowercased()).eraseToAnyPublisher()
+        }.eraseToAnyPublisher()
     }
     
     func addFavorite(_ organizationViewModel: OrganizationViewModel) {

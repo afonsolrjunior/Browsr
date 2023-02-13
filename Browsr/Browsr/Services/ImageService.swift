@@ -7,6 +7,7 @@
 
 import UIKit
 import Combine
+import Browsr_Lib
 
 protocol ImageService {
     func getImage(for urlString: String) -> AnyPublisher<UIImage, Never>
@@ -15,14 +16,14 @@ protocol ImageService {
 final class UIImageService: ImageService {
     
     private let cacheService: CacheService
-    private let imageDataRetriever: (String) -> AnyPublisher<Data, Never>
+    private let imageDataService: ImageDataService
     
     init(
         cacheService: CacheService,
-        imageDataRetriever: @escaping (String) -> AnyPublisher<Data, Never>
+        imageDataService: ImageDataService
     ) {
         self.cacheService = cacheService
-        self.imageDataRetriever = imageDataRetriever
+        self.imageDataService = imageDataService
     }
     
     func getImage(for urlString: String) -> AnyPublisher<UIImage, Never> {
@@ -33,11 +34,15 @@ final class UIImageService: ImageService {
             return Just(defaultImage).eraseToAnyPublisher()
         }
         
-        return imageDataRetriever(urlString).map {[weak self] imageData in
+        return imageDataService.getImageData(for: urlString)
+            .replaceError(with: Data())
+            .map {[weak self] imageData in
             self?.cacheService.save(imageData: .init(data: imageData), key: urlString)
             return UIImage(data: imageData) ?? UIImage()
         }.eraseToAnyPublisher()
         
     }
+    
+
     
 }
