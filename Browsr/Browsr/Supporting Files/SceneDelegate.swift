@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         assembler.networkStatusService.startMonitoring()
         
         let newWindow = UIWindow(windowScene: windowScene)
-        let mainCoordinator = assembler.mainCoordinator
+        let mainCoordinator = assembler.mainCoordinator()
         newWindow.rootViewController = mainCoordinator.rootViewController()
         window = newWindow
         window?.makeKeyAndVisible()

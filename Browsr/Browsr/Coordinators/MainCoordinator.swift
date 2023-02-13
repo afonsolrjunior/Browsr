@@ -44,8 +44,7 @@ final class MainCoordinator: NSObject, Coordinator {
     private func setupTabs() {
         tabBarController.delegate = self
         tabBarController.setViewControllers(children.map({ $0.rootViewController() }), animated: true)
-        tabBarController.selectedIndex = 0
-        
+        tabBarController.selectedIndex = 1
     }
 }
 

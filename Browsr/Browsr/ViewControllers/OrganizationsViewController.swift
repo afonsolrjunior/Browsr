@@ -22,6 +22,7 @@ final class OrganizationsViewController: UIViewController {
     private lazy var searchBar: UISearchBar = {
         let searchBar = UISearchBar()
         searchBar.translatesAutoresizingMaskIntoConstraints = false
+        searchBar.autocapitalizationType = .none
         searchBar.delegate = self
         return searchBar
     }()
@@ -34,6 +35,7 @@ final class OrganizationsViewController: UIViewController {
     init(presenter: OrganizationsPresenter, dataProvider: DataProvider) {
         self.presenter = presenter
         self.dataProvider = dataProvider
+        self.dataProvider.imageLoader = presenter.getImage(for:)
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -52,6 +54,8 @@ final class OrganizationsViewController: UIViewController {
     private func setupViews() {
         view.addSubview(searchBar)
         view.addSubview(tableView)
+        
+        view.backgroundColor = .systemBackground
         
         self.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 0)
     }
@@ -75,7 +79,9 @@ final class OrganizationsViewController: UIViewController {
     
     private func bind() {
         
-        presenter.getOrganizations()
+        let presenterOutput =  presenter.outputs()
+        
+        presenterOutput.0
             .receive(on: RunLoop.main)
             .sink { completion in
                 print(completion)
@@ -84,12 +90,12 @@ final class OrganizationsViewController: UIViewController {
                 self.tableView.reloadData()
             }.store(in: &cancellables)
         
-        presenter.getSearchedOrganization()
+        presenterOutput.1
             .receive(on: RunLoop.main)
             .sink { completion in
                 print(completion)
             } receiveValue: { viewModel in
-                self.dataProvider.update(items: [viewModel])
+                self.dataProvider.replace(items: [viewModel])
                 self.tableView.reloadData()
             }.store(in: &cancellables)
 
@@ -103,18 +109,25 @@ extension OrganizationsViewController: UITableViewDelegate {
         presenter.addFavorite(dataProvider.items[indexPath.row])
     }
     
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        guard !dataProvider.items.isEmpty && indexPath.row == dataProvider.items.count - 5 else { return }
+        
+        presenter.getNewPageSubject.send(())
+    }
+    
 }
 
 extension OrganizationsViewController: UISearchBarDelegate {
     
-    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-
-    }
-    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        guard let searchText = searchBar.text, searchText.count >= 3 else { return }
+        guard let searchText = searchBar.text, !searchText.isEmpty else { return }
         
         presenter.searchTextSubject.send(searchText)
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        guard searchBar.text.isNilOrEmpty else { return }
+        
     }
     
 }

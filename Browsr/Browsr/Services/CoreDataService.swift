@@ -73,14 +73,21 @@ final class CoreDataService {
     
     func addFavorite(organization: OrganizationViewModel) {
         let context = persistentContainer.viewContext
+        let fetchRequest = OrganizationDTO.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "name == %@", organization.name)
         
         return context.performAndWait {
-            let favorite = OrganizationDTO(context: context)
-            favorite.name = organization.name
-            favorite.avatarUrl = organization.avatarUrl
-            
             do {
-                try context.save()
+                let objects = try context.fetch(fetchRequest)
+                
+                if objects.isEmpty {
+                    let favorite = OrganizationDTO(context: context)
+                    favorite.name = organization.name
+                    favorite.avatarUrl = organization.avatarUrl
+                    
+                    try context.save()
+                }
+
             } catch {
                 
             }

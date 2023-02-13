@@ -37,6 +37,7 @@
 		9BFE9E492999A6CC00535717 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE9E482999A6CC00535717 /* DataProvider.swift */; };
 		9BFE9E4B2999A7A900535717 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE9E4A2999A7A900535717 /* FavoritesViewController.swift */; };
 		9BFE9E4D2999A9FE00535717 /* Assembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE9E4C2999A9FE00535717 /* Assembler.swift */; };
+		9BFE9E4F299A41FF00535717 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE9E4E299A41FF00535717 /* String+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,7 @@
 		9BFE9E482999A6CC00535717 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		9BFE9E4A2999A7A900535717 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		9BFE9E4C2999A9FE00535717 /* Assembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembler.swift; sourceTree = "<group>"; };
+		9BFE9E4E299A41FF00535717 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -276,6 +278,7 @@
 			isa = PBXGroup;
 			children = (
 				9BFE9E452999A61100535717 /* UITableViewCell+Extensions.swift */,
+				9BFE9E4E299A41FF00535717 /* String+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -434,6 +437,7 @@
 				9BFE9DDB299979AC00535717 /* Browsr.xcdatamodeld in Sources */,
 				9BFE9E282999888000535717 /* OrganizationViewModel.swift in Sources */,
 				9BFE9E2F2999920900535717 /* FavoritesRepository.swift in Sources */,
+				9BFE9E4F299A41FF00535717 /* String+Extensions.swift in Sources */,
 				9BFE9E432999A50F00535717 /* OrganizationsViewController.swift in Sources */,
 				9BFE9E4D2999A9FE00535717 /* Assembler.swift in Sources */,
 				9BFE9E1E2999806A00535717 /* CacheService.swift in Sources */,

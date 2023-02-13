@@ -27,6 +27,7 @@ final class FavoritesViewController: UIViewController {
     init(presenter: FavoritesPresenter, dataProvider: DataProvider) {
         self.presenter = presenter
         self.dataProvider = dataProvider
+        self.dataProvider.imageLoader = presenter.getImage(for:)
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -43,11 +44,13 @@ final class FavoritesViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
+        presenter.reloadData()
     }
     
     private func setupViews() {
         view.addSubview(tableView)
+        
+        view.backgroundColor = .systemBackground
         
         self.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 1)
     }
@@ -72,7 +75,7 @@ final class FavoritesViewController: UIViewController {
             .sink { completion in
                 print(completion)
             } receiveValue: { viewModels in
-                self.dataProvider.update(items: viewModels)
+                self.dataProvider.replace(items: viewModels)
                 self.tableView.reloadData()
             }.store(in: &cancellables)
 
@@ -84,6 +87,7 @@ extension FavoritesViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         presenter.removeFavorite(dataProvider.items[indexPath.row])
+        presenter.reloadData()
         tableView.reloadData()
     }
     

@@ -6,12 +6,20 @@
 //
 
 import UIKit
+import Combine
 
 final class DataProvider: NSObject, UITableViewDataSource {
 
     private(set) var items: [OrganizationViewModel] = []
+    public var imageLoader: ((OrganizationViewModel) -> AnyPublisher<UIImage, Never>)?
+    
+    private var cancellables: Set<AnyCancellable> = .init()
     
     func update(items: [OrganizationViewModel]) {
+        self.items.append(contentsOf: items)
+    }
+    
+    func replace(items: [OrganizationViewModel]) {
         self.items = items
     }
     
@@ -26,9 +34,14 @@ final class DataProvider: NSObject, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: UITableViewCell.identifier, for: indexPath)
         
-        var configuration = UIListContentConfiguration.cell()
-        configuration.text = items[indexPath.row].name
-        cell.contentConfiguration = configuration
+        imageLoader?(items[indexPath.row]).receive(on: RunLoop.main).sink {[weak self] image in
+            guard let self else { return }
+            var configuration = UIListContentConfiguration.cell()
+            configuration.text = self.items[indexPath.row].name
+            configuration.imageToTextPadding = 4
+            configuration.image = image
+            cell.contentConfiguration = configuration
+        }.store(in: &cancellables)
         
         return cell
     }

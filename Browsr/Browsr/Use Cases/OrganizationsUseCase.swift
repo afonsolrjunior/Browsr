@@ -10,17 +10,14 @@ import Combine
 
 final class OrganizationsUseCase {
     
-    let organizationsRepository: OrganizationsRepository
-    let imageService: ImageService
-    let networkStatusService: NetworkStatusService
+    private let organizationsRepository: OrganizationsRepository
+    private let networkStatusService: NetworkStatusService
     
     init(
         organizationsRepository: OrganizationsRepository,
-        imageService: ImageService,
         networkStatusService: NetworkStatusService
     ) {
         self.organizationsRepository = organizationsRepository
-        self.imageService = imageService
         self.networkStatusService = networkStatusService
     }
     

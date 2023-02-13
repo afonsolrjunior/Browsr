@@ -11,30 +11,33 @@ import Browsr_Lib
 
 final class Assembler {
     
-    let lib = Browsr_Lib()
+    func lib() -> Browsr_Lib {
+        return Browsr_Lib()
+    }
     
     let networkStatusService = NetworkStatusMonitor()
     let cacheService = ImageCacheService()
-    lazy var imageService = UIImageService(cacheService: cacheService,
-                                                   imageDataService: lib)
     
-    lazy var organizationRepository = OrganizationService(organizationsService: lib)
-    lazy var coreDataService = CoreDataService()
+    func imageService() -> ImageService {
+        UIImageService(cacheService: cacheService,
+                       imageDataService: lib())
+    }
+    
+    lazy var organizationRepository = OrganizationService(organizationsService: lib())
+    let coreDataService = CoreDataService()
     lazy var favoritesRepository = CoreDataFavoritesService(coreDataService: coreDataService)
     
     lazy var organizationsUseCase = OrganizationsUseCase(organizationsRepository: organizationRepository,
-                                                         imageService: imageService,
                                                          networkStatusService: networkStatusService)
     lazy var favoritesUseCase = FavoritesUseCase(favoritesRepository: favoritesRepository,
-                                                 imageService: imageService,
                                                  networkStatusService: networkStatusService)
     
     lazy var organizationsPresenter = OrganizationsPresenter(organizationsUseCase: organizationsUseCase,
                                                              addFavoriteService: favoritesRepository,
-                                                             imageService: imageService)
+                                                             imageService: imageService())
     lazy var favoritesPresenter = FavoritesPresenter(getFavoritesService: favoritesRepository,
                                                      removeFavoriteService: favoritesRepository,
-                                                     imageService: imageService)
+                                                     imageService: imageService())
     
     lazy var organizationsDataProvider = DataProvider()
     lazy var favoritesDataProvider = DataProvider()
@@ -44,7 +47,15 @@ final class Assembler {
     lazy var favoritesViewController = FavoritesViewController(presenter: favoritesPresenter,
                                                                dataProvider: favoritesDataProvider)
     
-    lazy var organizationsCoordinator = ListCoordinator(viewController: organizationsViewController)
-    lazy var favoritesCoordinator = ListCoordinator(viewController: favoritesViewController)
-    lazy var mainCoordinator = MainCoordinator(coordinators: [organizationsCoordinator, favoritesCoordinator])
+    func organizationsCoordinator() -> ListCoordinator {
+        ListCoordinator(viewController: organizationsViewController)
+    }
+    
+    func favoritesCoordinator() -> ListCoordinator {
+        ListCoordinator(viewController: favoritesViewController)
+    }
+    
+    func mainCoordinator() -> MainCoordinator {
+        MainCoordinator(coordinators: [favoritesCoordinator(), organizationsCoordinator()])
+    }
 }
